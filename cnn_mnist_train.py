@@ -22,7 +22,7 @@ def max_pool(x):
     return tf.nn.max_pool(x, ksize=[1, 2, 2, 1],strides=[1, 2, 2, 1], padding='SAME')
 
 #input -> conv -> pool -> conv -> pool -> fc -> dropout -> softmax
-def network(x)
+def network(x):
     x_image = tf.reshape(x, [-1,28,28,1]) #-1 means arbitrary
     W_conv1 = weight_variable([5, 5, 1, 32])
     b_conv1 = bias_variable([32])
