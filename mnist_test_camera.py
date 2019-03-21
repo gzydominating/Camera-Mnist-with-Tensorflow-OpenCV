@@ -17,7 +17,7 @@ def conv2d(x, W):
 def max_pool(x):
     return tf.nn.max_pool(x, ksize=[1, 2, 2, 1],strides=[1, 2, 2, 1], padding='SAME')
 
-def network(x)
+def network(x):
     x_image = tf.reshape(x, [-1,28,28,1]) #-1 means arbitrary
     h_conv1 = tf.nn.relu(conv2d(x_image, W_conv1) + b_conv1)  #conv1
     h_pool1 = max_pool(h_conv1)                               #max_pool1
