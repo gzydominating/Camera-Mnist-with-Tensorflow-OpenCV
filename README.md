@@ -1,5 +1,7 @@
 # Camera-Mnist-with-Tensorflow-OpenCV
 
+This is a test about learning tensorflow.
+
 Need:pyhton3.5,tensorflow,opencv3.x,pil(pillow),usb camera
 
 "cnn_mnist_train.py" train mnist.
