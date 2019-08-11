@@ -5,7 +5,7 @@ import tensorflow.examples.tutorials.mnist.input_data as input_data
 mnist = input_data.read_data_sets("MNIST_data/", one_hot=True) 
 x_input = tf.placeholder(tf.float32, [None, 784])  
 y_actual = tf.placeholder(tf.float32, shape=[None, 10]) 
-
+keep_prob = tf.placeholder("float")
 
 def weight_variable(shape):
     initial = tf.truncated_normal(shape, stddev=0.1)
@@ -39,7 +39,6 @@ def network(x):
     h_pool2_flat = tf.reshape(h_pool2, [-1, 7*7*64])
     h_fc1 = tf.nn.relu(tf.matmul(h_pool2_flat, W_fc1) + b_fc1)    #fc1
 
-    keep_prob = tf.placeholder("float")
     h_fc1_drop = tf.nn.dropout(h_fc1, keep_prob)                  #dropout
 
     W_fc2 = weight_variable([1024, 10])
