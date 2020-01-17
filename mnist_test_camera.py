@@ -31,7 +31,7 @@ def network(x):
     h_fc1_drop = tf.nn.dropout(h_fc1, keep_prob)               #dropout
 
     y_predict=tf.nn.softmax(tf.matmul(h_fc1_drop, W_fc2) + b_fc2) #fc2 output
-	return y_predict
+    return y_predict
 	
 keep_prob = tf.placeholder("float")
 W_conv1 = weight_variable([5, 5, 1, 32])
@@ -46,7 +46,7 @@ sess=tf.InteractiveSession()
 saver = tf.train.Saver()
 saver.restore(sess, "./model_save.ckpt") #load model file must have ./ with tensorflow1.0
 
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 while(1):
     ret, frame = cap.read()
     cv2.rectangle(frame,(270,200),(340,270),(0,0,255),2)
